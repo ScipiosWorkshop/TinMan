@@ -3,7 +3,7 @@
 all: main.x hash.o
 
 main.x: main.o probability.o hash.o
-	gcc main.o probability.o hash.o -o main.x
+	gcc -g main.o probability.o hash.o -o main.x
 
 main.o: main.c probability.h hash.h
 	gcc -c main.c

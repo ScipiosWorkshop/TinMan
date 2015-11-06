@@ -6,10 +6,12 @@
 
 
 //Function Declarations
-int n_choose_k(int n, int k);
-int factorial(int number);
-int calculate_hypergeometric(int successes, int draws, int population_size, int total_successes);
-
+long long n_choose_k(int n, int k);
+long long int factorial(int number);
+long double calculate_hypergeometric(int successes, int draws, int population_size, int total_successes);
+long double calculate_multi_hypergeometric(int total_partial_successes[], int target_successes[], int num_targets, int total_population,
+			  	   int draw_size);
+long long n_choose_k_efficient(int n, int k);
 
 
 #endif
