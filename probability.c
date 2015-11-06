@@ -58,16 +58,17 @@ long double calculate_hypergeometric(int successes, int draws, int population_si
 
 long double calculate_multi_hypergeometric(int total_partial_successes[], int target_successes[], int num_targets, int total_population, int draw_size){
   unsigned int i;
-  long double numerator = 0;
+  long double numerator = 1;
   for(i = 0; i < num_targets; i++){
+    printf("Numerator: %Lf\n", numerator);
+    printf("Total partial succ: %d, Target: %d\n", total_partial_successes[i], target_successes[i]);
     numerator *= n_choose_k_efficient(total_partial_successes[i], 
 				target_successes[i]);
   }
   
-
-
-
-
-  //return 1.00;
+  long double denominator = n_choose_k_efficient(total_population,
+						 draw_size);
+  printf("Denominator: %Lf\n", denominator);
+  return numerator / denominator;
 
 }

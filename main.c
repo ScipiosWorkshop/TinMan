@@ -42,12 +42,21 @@ int main(){
   //}
   //printf("efficient 40 choose 2: %lld\n", n_choose_k_efficient(40,2));
   //printf("regular 40 choose 2: %lld\n", n_choose_k(40,2));
-  double q = calculate_hypergeometric(1,7,60,10);
+  long double q = calculate_hypergeometric(1,7,60,10);
  
-  printf("4 copies of card in 60 card deck drawing 7 want 1: %f\n", 
+  
+  
+  printf("4 copies of card in 60 card deck drawing 7 want 1: %Lf\n", 
   	 q);
   
+  int part_succ[] = {10, 4, 4, (60-18)};
 
+  int target_succ[] = {1,1,1,4};
+
+  long double z = calculate_multi_hypergeometric(part_succ, target_succ, 4, 60, 7);
+
+  printf("10 mountains, 4 copies each of two other, want one copy each in opening hand: %Lf\n", z);
+  
 }
 
 
